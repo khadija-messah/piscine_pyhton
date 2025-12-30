@@ -18,7 +18,7 @@ def parssing_S(s):
         arr = s.split()
         for i in arr:
             for s in i:
-                assert check_caractere(s),"machi caractere"
+                assert check_caractere(s),"not caractere"
     except AssertionError as error:
         print(error)
         return 1
