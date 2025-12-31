@@ -1,4 +1,5 @@
 
+import sys
 from ft_filter import ft_filter
 
 def check_caractere(c):
@@ -9,7 +10,7 @@ def parssing_N(intiger):
     try:
         n = int(intiger)
     except ValueError:
-        print("argument should be intiger")
+        print("AssertionError: argument should be intiger")
         return 1
 
 def parssing_S(s):
@@ -25,10 +26,10 @@ def parssing_S(s):
         print(error)
         return 1
     return result
-import sys
+
 def filterstring():
     try:
-        assert len(sys.argv) == 3 ,"error number argmuent"
+        assert len(sys.argv) == 3 ,"AssertionError: error number argmuent"
         if parssing_N(sys.argv[2]):
             return
         s = int(sys.argv[2])
@@ -36,10 +37,8 @@ def filterstring():
         t = []
         if res == 1:
             return
-        for i in res:
-            if len(i) > s:
-                t.append(i)
-        print(t)
+        li = print(list(ft_filter(lambda name : len(name) > s, res)))
     except AssertionError as error:
         print(error)
 filterstring()
+print(ft_filter.__doc__)
